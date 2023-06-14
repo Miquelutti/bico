@@ -1,0 +1,47 @@
+<div fxLayout="row" fxFlex="100" fxLayoutGap="25px" fxLayoutAlign="center start">
+  <div fxFlex="70" fxLayout.gt-md="row" fxLayout="column" fxLayoutGap="25px" class="container-teste">
+    <mat-card fxLayout="column" fxLayoutGap="25px">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image mat-elevation-z5"
+             [style.background-image]="'url(https://www.earlofsandwichusa.com/wp-content/uploads/2016/05/Sandwich_The_Full_Montagu-min.jpg)'"></div>
+        <div fxLayout="column" fxLayoutGap="25px" fxFlexOffset="10px" fxLayoutAlign="center start">
+          <mat-card-title>Olá {{user.firstName}} {{user.lastName}}!</mat-card-title>
+          <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <div fxLayout="row-reverse">
+            <button mat-icon-button (click)="doEditBody()">
+              <mat-icon class="topMenu">edit</mat-icon>
+            </button>
+          </div>
+          <div *ngIf="editBody == false" fxLayout="row" fxFlexFill>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum lobortis feugiat. Sed justo sapien, malesuada at ultricies et, sollicitudin at turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum lobortis feugiat. Sed justo sapien, malesuada at ultricies et, sollicitudin at turpis.
+          </div>
+          <div *ngIf="editBody == true">
+            <mat-form-field>
+            <textarea matInput placeholder="" matTextareaAutosize matAutosizeMinRows="2"
+                      matAutosizeMaxRows="5"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions fxLayout="row-reverse">
+        <button mat-button>Copiar</button>
+        <button (click)="logout()" mat-button>Deslogar</button>
+      </mat-card-actions>
+    </mat-card>
+    <div fxFlex="50" fxLayout="column" fxLayoutGap="35px">
+      <mat-card-title>Endereço</mat-card-title>
+      <mat-card fxLayout="column" fxLayoutGap="25px" (mouseenter)="aboutMeActive = true" (mouseleave)="aboutMeActive = false" [class.mat-elevation-z8]="aboutMeActive">
+      </mat-card>
+      <mat-card-title>Telefones</mat-card-title>
+      <mat-card fxLayout="column" fxLayoutGap="25px" (mouseenter)="particularsActive = true" (mouseleave)="particularsActive = false" [class.mat-elevation-z8]="particularsActive">
+      </mat-card>
+      <mat-card-title>Outros</mat-card-title>
+      <mat-card fxLayout="column" fxLayoutGap="25px" (mouseenter)="extrasActive = true" (mouseleave)="extrasActive = false" [class.mat-elevation-z8]="extrasActive">
+      </mat-card>
+    </div>
+  </div>
+</div>

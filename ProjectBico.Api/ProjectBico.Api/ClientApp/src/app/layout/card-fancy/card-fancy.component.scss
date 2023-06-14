@@ -1,0 +1,41 @@
+mat-card:hover .selection {
+  opacity: 1;
+}
+
+mat-card.mat-elevation-z4 .selection {
+  opacity: 1;
+}
+
+.card-selected {
+  border: 2px solid #f60;
+}
+
+.card-width {
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+
+.selection {
+  opacity: 0;
+  cursor: pointer;
+  color: rgba(247, 137, 64, 0.829);
+  background: #fff;
+  position: absolute;
+  right:-10px;
+  top:-10px;
+  border-radius: 100%;
+  height: 24px;
+  width: 10%;
+  max-width: 20%;
+}
+
+mat-card {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,1),
+              0 1px 1px 0 rgba(0,0,0,1),
+              0 1px 1px 0 rgba(0,0,0,1);
+}

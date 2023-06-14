@@ -1,0 +1,15 @@
+<div fxFlex="100%" fxLayoutAlign="center center">
+  <mat-list fxFlex="55%" fxLayout="row" fxLayoutAlign="center center" >
+      <mat-list-item fxFlex="50" *ngFor="let folder of folders">
+        <div fxflex fxLayout="column" fxLayoutAlign="center center">
+          <img fxFlex="30%" src="{{folder.photo}}" mat-list-avatar>
+          <div class="text-center" fxflex fxLayout="column" fxLayoutAlign="center center">
+            <div fxFlex="25%" mat-line>{{folder.name}}</div>
+            <div fxFlex="25%" mat-line> {{folder.description}}</div>
+            <div fxFlex="25%" mat-line> {{folder.link}}</div>
+          </div>
+        </div>
+      </mat-list-item>
+  </mat-list>
+</div>
+

@@ -1,0 +1,55 @@
+.register-div{
+  padding: 100px 350px 0 350px;
+}
+.title{
+  font-size: 40px;
+}
+.color-title{
+  color: #00495f;
+}
+.sub-title{
+  font-size: 20px;
+}
+
+:host {
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "loginCard"
+    "footer";
+  grid-template-rows: 1fr auto;
+}
+
+img {
+  width: 250px;
+  padding: 2em;
+}
+
+.login-container {
+  grid-area: loginCard;
+  justify-self: center;
+  text-align: center;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.form-actions {
+  margin-top: 3em;
+}
+
+app-footer {
+  grid-area: footer;
+  font-size: 0.8rem;
+}
+
+mat-card{
+  height: max-content;
+}
+
+@media(max-width: 768px) {
+  mat-card {
+    width: 330px;
+  }
+}

@@ -1,0 +1,26 @@
+@import "~src/assets/scss/variables";
+
+.router-container {
+  background-color: $p-29;
+  width: 100%;
+}
+
+.app-container {
+  position: relative;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.scrollable {
+  overflow: auto !important;
+}
+
+.main-content {
+  padding: 16px;
+}
+
+.main-container {
+  overflow-x: hidden;
+}

@@ -1,0 +1,142 @@
+@import "~src/assets/scss/variables";
+
+.font-devbyPI {
+  font-family: "Helvetica Condensed";
+  font-size: 16px;
+  letter-spacing: 0.08px;
+  color: $p-01;
+  opacity: 1;
+  margin-right: 10px;
+}
+
+.font-foter {
+  font-family: "Montserrat Bold";
+  font-size: 18px;
+  letter-spacing: 0px;
+  color: #333;
+  opacity: 1;
+}
+
+.font-sub-foter {
+  font-family: "Helvetica Condensed";
+  font-size: 18px;
+  letter-spacing: 0.09px;
+  color: $p-01;
+  opacity: 1;
+  padding-top: 10px;
+}
+
+.image-logo {
+  height: 126px;
+}
+
+.backgroundLogo {
+  background: $p-14 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+.paddinglogov1 {
+  padding-left: 42px;
+}
+.paddinglogov2main {
+  padding-right: 42px;
+}
+.backgroundCopyright {
+  background: #323941 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.backgroundFooterMain {
+  background: #fbfbfb 0% 0% no-repeat padding-box;
+  opacity: 5;
+}
+
+.margingBg {
+  padding: 10px;
+}
+
+.marginFooterText{
+  margin-bottom: 4.5%;
+  margin-top: 4.5%;
+}
+
+.paddingLogo {
+  padding-left: 1.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mat-button-focus-overlay {
+  background-color: transparent !important;
+}
+
+button {
+  outline: none;
+}
+
+::ng-deep .mat-button-focus-overlay {
+  display: none;
+}
+
+
+ @media screen and (max-width: 1320px) {
+  .marginFooterText {
+    padding-left: 4%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .paddinglogov1 {
+    padding-top: 16px;
+    padding-left: 0;
+  }
+  .paddinglogoabrasel {
+    padding-top: 16px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+  }
+  .font-foter {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .paddingLogo {
+    padding-left: 1px;
+  }
+  .padding-img {
+    padding-top: 30px;
+    padding-right: 50px;
+  }
+  .margingBg {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .icons-padding {
+    padding-top: 30px;
+  }
+  .text-legais {
+    padding-left: 0px;
+    padding-top: 15px;
+  }
+  .text-adesao {
+    padding-left: 0px;
+    padding-top: 15px;
+  }
+  .padding-coluans{
+    padding-top: 15px;
+  }
+  .font-devbyPI {
+    font-size: 14px;
+  }
+  .padding-logo {
+    padding-bottom: 8px;
+  }
+  .icons-padding {
+    padding-top: 0px;
+    padding-left: 0px;
+  }
+  .font-sub-foter {
+    font-size: 16px;
+  }
+}
+

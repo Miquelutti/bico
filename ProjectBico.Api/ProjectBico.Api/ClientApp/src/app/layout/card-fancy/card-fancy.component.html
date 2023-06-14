@@ -1,0 +1,17 @@
+<div class="card-width" *ngFor="let folder of folders"  fxFlex="85%" fxLayoutAlign="center center">
+  <mat-card fxFlex="85%" [ngClass]="{'card-selected mat-elevation-z4': selected}">
+    <span [matTooltip]="selected ? 'Avaliação' : 'Ver Perfil do Avaliador'" class="selection">
+    <mat-icon>check_circle</mat-icon>
+    </span>
+    <mat-card-header>
+      <img mat-card-avatar  src="{{folder.photo}}">
+      <mat-card-title>{{folder.name}}</mat-card-title>
+      <mat-card-subtitle>{{folder.date}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{folder.description}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

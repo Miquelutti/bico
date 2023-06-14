@@ -1,0 +1,66 @@
+<div fxLayout="row" class="register-div" fxLayoutGap="20px">
+  <div fxLayout="column" fxFlex="50%">
+      <span class="title">
+          Encontre diversos profissionais com seguro
+          <span class="color-title title">
+              em sua região.
+          </span>
+      </span>
+      <span class="sub-title">
+          Cadastre-se Já! Ou faça login para continuar.
+      </span>
+  </div>
+      <mat-card-content fxFlex="50%" fxLayout='column'>
+        <div class="card">
+          <h4 class="card-header">Faça seu Registro</h4>
+          <div class="card-body">
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                  <div class="form-group">
+                      <label for="firstName">Primeiro Nome</label>
+                      <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                      <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                          <div *ngIf="f.firstName.errors.required">Primeiro Nome é Obrigatorio!</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="lastName">Último Nome</label>
+                      <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                          <div *ngIf="f.lastName.errors.required">Último nome é Obrigatorio!</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="username">E-mail</label>
+                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">E-Mail é Obrigatorio!</div>
+                    </div>
+                </div>
+                  <div class="form-group">
+                      <label for="username">Username</label>
+                      <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                      <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                          <div *ngIf="f.username.errors.required">Username é Obrigatorio!</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="password">Senha</label>
+                      <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                          <div *ngIf="f.password.errors.required">Senha é Obrigatorio!</div>
+                          <div *ngIf="f.password.errors.minlength">Senha deve ter pelomenos 6 caracteres!</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <button [disabled]="loading" class="btn btn-primary">
+                          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                          Registrar
+                      </button>
+                      <a routerLink="../login" class="btn btn-link">Cancelar</a>
+                  </div>
+              </form>
+          </div>
+      </div>
+
+      </mat-card-content>
+</div>

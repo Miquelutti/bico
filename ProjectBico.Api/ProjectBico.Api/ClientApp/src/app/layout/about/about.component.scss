@@ -1,0 +1,291 @@
+@import "~src/assets/scss/variables";
+
+.backgroundImgAssets {
+  background-repeat: no-repeat;
+  background-position: center 2%;
+  background-position-x: 80%;
+  background-attachment: initial;
+}
+
+.background {
+  background-color: fbfbfb;
+}
+
+.content {
+  margin: 3% 0px;
+}
+
+.participant-type-benefits {
+  width: 100%;
+}
+
+.presentation-video {
+  max-height: 483px;
+  max-width: 864px;
+  min-height: 182px;
+  min-width: 327px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.text-main-title {
+  font-family: "Montserrat Bold";
+  font-size: 65px;
+  letter-spacing: 0px;
+  color: #242626;
+  opacity: 1;
+}
+
+.text-sub-title-blue {
+  font-family: "Montserrat Bold";
+    font-size: 45px;
+    letter-spacing: 0.88px;
+    color: #f60;
+    text-transform: uppercase;
+    opacity: 1;
+    line-height: 0 !important;
+}
+
+.text-sub-title-blue-black {
+  font-family: "Helvetica Condensed";
+  font-size: 40px;
+  letter-spacing: 2.36px;
+  color: $p-12;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.autocomplete-container .input-container input {
+  font-size: 26px !important;
+  box-sizing: border-box;
+  border: none;
+  box-shadow: none;
+  outline: 0;
+  background-color: #fff;
+  color: rgba(0,0,0,.87);
+  width: 100%;
+  padding: 9px 50px;
+  line-height: 78px;
+  height: 40px;
+}
+
+.container {
+  display: flex;
+  padding-left: 2px !important;
+}
+
+.ng-autocomplete {
+  width: 425px;
+}
+
+.btn {
+     background-color: #f60;
+      border: none;
+      color: white;
+      padding: 8px 22px;
+      margin: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      cursor: pointer;
+      outline: none;
+}
+.btn:disabled {
+  background-color: gray;
+}
+
+.text-title-delivery {
+  font-family: "Helvetica Condensed";
+  color: $p-18;
+  font-size: 20px;
+  text-transform: uppercase;
+  opacity: 1;
+  letter-spacing: 2.70px;
+}
+
+.text-title-delivery-benefit {
+  font-family: "Montserrat Bold";
+  color: #f60;
+  font-size: 67px;
+  opacity: 1;
+  letter-spacing: -2.90px;
+  line-height: 65px;
+}
+
+.text-label {
+  font-family: "Helvetica Condensed";
+  font-size: 18px;
+  letter-spacing: 0.09px;
+  color: $p-18;
+  opacity: 1;
+}
+
+.button-label-more {
+  font-family: "Montserrat Bold";
+  font-size: 19px;
+  text-align: center;
+  letter-spacing: 0px;
+  color: $p-01;
+  opacity: 1;
+}
+
+.button-more {
+  width: 250px;
+  height: 64px;
+  background: #f60;
+  border-radius: 4px;
+  opacity: 1;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+.margin-text {
+  padding-left: 5px;
+}
+
+.img-bico {
+  transform: rotateY(180deg);
+  fill: $p-08;
+  opacity: 1;
+}
+
+.img-paddingBico {
+  padding-right: 15px;
+}
+
+.text-open-line {
+  line-height: 145px;
+}
+
+.text-delivery-line {
+  line-height: 120px;
+}
+
+@media screen and(max-width: 960px) and (min-width: 599px) {
+  .button-more {
+    height: 110px !important;
+    width: 75% !important;
+  }
+  .button-label-more {
+    font-size: 14px !important;
+  }
+}
+
+@media screen and (max-width: 1420px) {
+  .text-sub-title-blue-black {
+    font-size: 32px;
+  }
+  .text-sub-title-blue {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+
+  .text-sub-title-blue-black {
+    font-size: 26px;
+  }
+  .text-sub-title-blue {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .background-about-image {
+    height: 250px;
+  }
+  .image {
+    height: 250px;
+    object-fit: contain;
+  }
+  .presentation-video {
+    min-height: 200px;
+    min-width: 340px;
+  }
+  .text-main-title {
+    font-size: 100px;
+  }
+  .text-sub-title-blue-black {
+    font-size: 24px;
+  }
+  .text-sub-title-blue {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 665px) and (min-width: 600px) {
+  .presentation-video {
+    min-width: 210px;
+  }
+  .fxLtWd {
+    margin-right: 40px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .text-main-title {
+    font-size: 68px;
+  }
+  .img-paddingBico {
+    padding-right: 2px;
+  }
+  .text-delivery-line {
+    line-height: 37px;
+  }
+  .text-open-line {
+    line-height: 142px;
+  }
+  .text-sub-title-blue {
+    letter-spacing: 0px;
+    text-transform: none;
+    font-size: 22px;
+  }
+  .text-sub-title-blue-black {
+    letter-spacing: 0px;
+    text-transform: none;
+    font-size: 22px;
+  }
+  .text-title-delivery-benefit {
+    font-size: 50px;
+    align-self: center;
+  }
+  .text-title-delivery {
+    font-size: 18px;
+    align-self: center;
+    padding-right: 0px;
+    letter-spacing: 1.7px;
+  }
+
+  @media screen and (max-width: 815px) {
+    .button-more{
+        align-self: center !important;
+    }
+  }
+
+  @media (device-height : 568px) and (device-width : 320px) and (-webkit-min-device-pixel-ratio: 2) {
+  .text-main-title {
+    font-size: 50px;
+    }
+    .presentation-video {
+      min-width: 210px;
+      min-width: 290px;
+    }
+  }
+}
+
+// .scrollable {
+//   scroll-margin-top: 135px;
+//   scroll-snap-margin-top: 135px;
+// }
+
+// @media screen and (max-width: 599.99px) {
+//   .scrollable {
+//       scroll-margin-top: 78px;
+//       scroll-snap-margin-top: 78px;
+//   }
+// }

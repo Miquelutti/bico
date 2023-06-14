@@ -1,0 +1,195 @@
+@import "~src/assets/scss/variables";
+
+.mat-toolbar {
+    background: $p-01;
+    color: black;
+    z-index: 999;
+}
+
+header {
+    height: 103px;
+}
+
+.header-row {
+    position: fixed;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+    height: 103px;
+    width: 100%;
+    max-width: 100%;
+}
+
+::ng-deep .menu-options {
+    margin-top: 3px;
+    width: 209px;
+}
+
+::ng-deep .menu-trigger {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+}
+
+::ng-deep .mat-tab-label-content {
+    height: 100%;
+    width: 100%;
+}
+
+::ng-deep .mat-tab-label {
+    padding: 0px !important;
+}
+
+::ng-deep .mat-menu-content {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.select-text {
+    font-family: "Montserrat Bold";
+    font-size: 18px;
+    opacity: 1;
+    letter-spacing: 0px;
+    text-decoration: none;
+    padding-top: 8px;
+}
+
+.option-text {
+    font-family: "Helvetica Condensed";
+    color: $p-18;
+    font-size: 18px !important;
+    line-height: 28px !important;
+    opacity: 1;
+    letter-spacing: 0.09px;
+    text-decoration: none;
+}
+
+.option-text:hover {
+    background-color: $p-24;
+}
+
+.image-logo {
+    height: 126px;
+}
+
+.img-background-padding-OD {
+    padding-left: 5%;
+    padding-right: 15px;
+}
+
+.img-background-padding-AB {
+    padding-right: 5%;
+    padding-left: 15px;
+}
+
+::ng-deep .mat-tab-label-active {
+    color: #f60 !important;
+  }
+
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
+    text-decoration: none !important;
+}
+
+:host ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+    padding: 1.4em 0px !important;
+}
+
+::ng-deep .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+    background: black;
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: $p-18;
+}
+
+:host ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #f60 !important;
+}
+
+::ng-deep .mat-ink-bar {
+    background-color: $p-08 !important;
+}
+
+:host ::ng-deep .mat-tab-label {
+    color: $p-18 !important;
+    font-family: "Montserrat Bold";
+    font-size: 18px;
+    opacity: 1;
+    letter-spacing: 0px;
+    text-decoration: none;
+}
+
+:host ::ng-deep .mat-tab-label-active {
+    color: #f60 !important;
+}
+
+.nav-tree {
+    padding: 0px 24px;
+}
+
+.menu-tree {
+    position: fixed;
+    top: 78px;
+    height: calc(100vh - 65px);
+    width: 100%;
+    z-index: 100000;
+    background-color: $p-01;
+}
+
+.node-tree-invisible {
+    display: none;
+}
+
+.nav-tree div[role=group] > .mat-tree-node {
+    padding-left: 24px;
+}
+
+.highlighted-node {
+    text-align: left;
+    font-family: "Montserrat Bold";
+    font-size: 26px;
+    opacity: 1;
+    line-height: 36px;
+    letter-spacing: 0px;
+    color: $p-18;
+}
+
+.simple-node {
+    text-align: left;
+    letter-spacing: 0.08px;
+    color: $p-18;
+    opacity: 1;
+    font-family: "Helvetica Condensed";
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.tree-node-icon {
+    font-size: 40px;
+    height: 24px;
+    width: 40px;
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        height: 78px;
+    }
+    .header-row {
+        height: 78px;
+    }
+    .img-background-padding-OD {
+        padding-left: 10px;
+        padding-right: 0px;
+    }
+    .image-logo {
+        height: 40px;
+    }
+    .second-logo-mobile {
+        margin-left: 24px;
+        margin-bottom: 32px;
+    }
+    .open-mobile-menu {
+        font-size: 32px;
+        width: 39px;
+    }
+}

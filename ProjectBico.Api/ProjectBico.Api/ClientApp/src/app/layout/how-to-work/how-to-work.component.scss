@@ -1,0 +1,28 @@
+.mat-list-base .mat-list-item .mat-list-avatar, .mat-list-base .mat-list-option .mat-list-avatar {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+::ng-deep .mat-list-base .mat-list-item .mat-line {
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mat-list-base {
+  padding-top: 60px !important;
+}
+
+.item {
+  width: 100px;
+  background-color: #FFDE49;
+  margin: 10px;
+  text-align: center;
+  text-align: center;
+}

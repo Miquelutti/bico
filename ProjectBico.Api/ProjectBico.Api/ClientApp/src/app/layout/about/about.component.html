@@ -1,0 +1,78 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="background">
+  <div fxFlex="90" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px" class="content">
+      <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="center stretch" fxLayoutGap="70px"
+          fxLayoutGap.lt-sm="15px" class="fxLtWd">
+          <div fxFlex="50" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="30px">
+              <div fxLayout="column" fxLayoutAlign="start start">
+                  <div fxFlex fxLayout="row" fxLayoutAlign="start start">
+                      <span class="text-main-title img-paddingBico text-open-line">Uma nova forma de</span>
+                      <span [innerHTML]="iconDelivery" class="img-bico img-paddingBico"></span>
+                  </div>
+              </div>
+              <div fxLayout="row">
+                  <span class="text-sub-title-blue margin-text">contratar profissionais</span>
+              </div>
+              <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="30px">
+                  <span class="text-label">
+                    Encontre e contrate os melhores profissionais em sua região. Milhares de prestadores de serviço com seguro perto de você!
+
+                  </span>
+              </div>
+              <div class="reactive-form" fxHide fxShow.gt-sm fxLayoutAlign="center center" fxLayoutAlign.md="start center"
+              fxLayout.xs="row">
+                <form autocomplete="off" novalidate [formGroup]="reactiveForm" (ngSubmit)="submitReactiveForm()">
+                  <div class="container">
+                    <div class="ng-autocomplete">
+                      <ng-autocomplete #ngAutoCompleteStatic
+                                       [data]="jobsReactive"
+                                       formControlName="name"
+                                       [initialValue]=""
+                                       [placeholder]="placeholder"
+                                       [searchKeyword]="keyword"
+                                       historyIdentifier="countriesReactiveList"
+                                       [historyHeading]="historyHeading"
+                                       historyListMaxNumber="3"
+                                       notFoundText="Not found"
+                                       [itemTemplate]="itemTemplateStatic"
+                                       [notFoundTemplate]="notFoundTemplate">
+                      </ng-autocomplete>
+
+                      <ng-template #itemTemplateStatic let-item>
+                        <a [innerHTML]="item"></a>
+                      </ng-template>
+
+                      <ng-template #notFoundTemplate let-notFound>
+                        <div [innerHTML]="notFound"></div>
+                      </ng-template>
+                    </div>
+                    <button class="btn" type="submit" [disabled]="reactiveForm.invalid">Pesquisar</button>
+                  </div>
+                </form>
+              </div>
+              <button fxHide fxShow.gt-sm fxLayoutAlign="center center" fxLayoutAlign.md="start center"
+                  fxLayout.xs="row" mat-button class="button-more" fxLayoutAlign.lt-sm="start center"
+                  [routerLink]="['/inicio']" [queryParams]="{ view: 'interested'}">
+                  <span class="button-label-more">Entenda como funciona!</span>
+              </button>
+
+          </div>
+          <div fxFlex="50" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap.lt-sm="15px" fxLayoutGap="4px">
+              <div class="background-about-image" fxLayout="row" fxLayoutAlign="center center">
+                  <img src="../assets/images/img/image.webp" class="image">
+              </div>
+              <button fxHide.gt-sm fxLayoutAlign="center center" fxLayoutAlign.md="start center" fxLayout.xs="row"
+                  mat-button class="button-more" fxLayoutAlign.lt-sm="start center" [routerLink]="['/inicio']"
+                  [queryParams]="{ view: 'interested'}">
+                  <span class="button-label-more">Quer saber mais?</span>
+              </button>
+          </div>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="center center">
+          <span class="text-title-delivery">Como funciona?</span>
+          <span class="text-title-delivery-benefit">Plataforma</span>
+      </div>
+      <!-- <div fxLayout="column" fxLayoutAlign="center stretch" class="participant-type-benefits">
+          <app-how-to-work></app-how-to-work>
+      </div> -->
+  </div>
+</div>

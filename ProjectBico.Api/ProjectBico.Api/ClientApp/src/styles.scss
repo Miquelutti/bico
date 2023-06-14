@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr.css';
+@import './assets/scss/variables.scss';
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto,
+    "Helvetica Neue",
+    sans-serif;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Montserrat Bold";
+    src: url(assets/font/Montserrat-Bold.ttf) format("opentype");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Montserrat Regular";
+    src: url(assets/font/Montserrat-Regular.ttf) format("opentype");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Helvetica Condensed";
+    src: url(assets/font/Helvetica-Condensed.otf) format("opentype");
+}
