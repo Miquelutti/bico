@@ -27,8 +27,7 @@ namespace Fatec.Infrastructure.ModelConfig.User
                 .HasMaxLength(100);
 
             builder.Property(x => x.Password)
-                .IsRequired()
-                .HasMaxLength(12);
+                .IsRequired();
 
             builder.HasMany(x => x.Requests)
                 .WithOne(x => x.ContractingUser)

@@ -62,9 +62,9 @@ namespace ProjectFatec.WebApi.Controllers
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> CreateUser(UserRequest request)
         {
-            var user = _mapper.Map<User>(request);
+            User user = _mapper.Map<User>(request);
 
-            var response = await _userService.CreateUser(user);
+            bool response = await _userService.CreateUser(user);
 
             if (!response)
                 return BadRequest();
