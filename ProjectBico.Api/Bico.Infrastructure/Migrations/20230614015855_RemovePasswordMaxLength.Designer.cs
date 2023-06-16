@@ -4,14 +4,16 @@ using Fatec.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Fatec.Infrastructure.Migrations
 {
     [DbContext(typeof(BicoContext))]
-    partial class BicoContextModelSnapshot : ModelSnapshot
+    [Migration("20230614015855_RemovePasswordMaxLength")]
+    partial class RemovePasswordMaxLength
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
