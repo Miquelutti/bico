@@ -1,4 +1,5 @@
-﻿using Fatec.Domain.Entities;
+﻿using Bico.Domain.Entities.User;
+using Bico.Domain.Exceptions;
 using Fatec.Domain.Exceptions;
 using Fatec.Domain.Repositories.Interfaces;
 using Fatec.Domain.Repositories.Transaction;
@@ -6,6 +7,7 @@ using Fatec.Domain.Services.Interfaces.User;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BCryptNet = BCrypt.Net.BCrypt;
 using UserEntity = Fatec.Domain.Entities.User.User;
 
 namespace Fatec.Domain.Services.User
@@ -26,12 +28,17 @@ namespace Fatec.Domain.Services.User
             return await _userRepository.FindById(userId);
         }
 
+        public async Task<UserEntity> GetUserByEmail(string email)
+        {
+            return await _userRepository.GetUserByEmail(email);
+        }
+
         public async Task<bool> CreateUser(UserEntity user) 
         {
             var userVerified = await _userRepository.GetUserByCPF(user.CPF);
 
             if (userVerified != null) 
-                throw new UserException("USER ALREADY EXISTS!");
+                throw new UserException($"CPF IS ALREADY IN USE!");
 
             _userRepository.Add(user);
 
@@ -69,5 +76,14 @@ namespace Fatec.Domain.Services.User
             return await _unitOfWork.SaveChangesAsync();
         }
 
+        public async Task<UserEntity> Authenticate(AuthenticateRequest model)
+        {
+            var user = await GetUserByEmail(model.Email);
+
+            if(user == null || !BCryptNet.Verify(model.Password, user.Password))
+                throw new AuthenticateException("Username or Password is incorrect");
+
+            return user;
+        }
     }
 }

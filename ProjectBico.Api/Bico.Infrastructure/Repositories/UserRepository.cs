@@ -36,5 +36,10 @@ namespace Fatec.Infrastructure.Repositories
                 .Where(x => x.Id == id)
                 .FirstOrDefaultAsync();
         }
+
+        public async Task<User> GetUserByEmail(string email)
+        {
+            return await DbSet.Where(x => x.Email == email).FirstOrDefaultAsync();
+        }
     }
 }

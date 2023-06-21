@@ -8,16 +8,11 @@ namespace Bico.Domain.Services.Ecryption
     {
         public static string PasswordEcryption(string password)
         {
-            string hashedPassword;
+            int salt = 12;
+            string passwordHash = BCrypt.Net.BCrypt.HashPassword(password, salt);
 
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
-                byte[] hashedBytes = sha256.ComputeHash(passwordBytes);
-                hashedPassword = Convert.ToBase64String(hashedBytes);
-            }
 
-            return hashedPassword;
+            return passwordHash;
         }
     }
 }
