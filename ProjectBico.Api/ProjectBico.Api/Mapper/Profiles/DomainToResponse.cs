@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Bico.Domain.Entities.User;
 using Fatec.Domain.Entities.Address;
 using Fatec.Domain.Entities.Job;
 using Fatec.Domain.Entities.JobCategory;
@@ -13,6 +14,7 @@ namespace ProjectFatec.WebApi.Mapper.Profiles
         public DomainToResponse()
         {
             CreateMap<User, UserViewModel>();
+            CreateMap<User, AuthenticateResponse>();
             CreateMap<Job, JobViewModel>();
             CreateMap<JobCategory, JobCategoryViewModel>();
             CreateMap<Job, JobDetailsViewModel>();

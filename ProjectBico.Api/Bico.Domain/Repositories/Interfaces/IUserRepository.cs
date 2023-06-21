@@ -7,5 +7,6 @@ namespace Fatec.Domain.Repositories.Interfaces
     {
         public Task<User> GetUserById(long id);
         public Task<User> GetUserByCPF(string cpf);
+        public Task<User> GetUserByEmail(string email);
     }
 }

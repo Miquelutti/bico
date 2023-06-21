@@ -1,7 +1,11 @@
 ﻿using AutoMapper;
+using Bico.Domain.Entities.User;
+using Bico.WebApi.Authorization;
+using Bico.WebApi.Models.Request;
 using Fatec.Domain.Entities.User;
 using Fatec.Domain.Services.Interfaces.Address;
 using Fatec.Domain.Services.Interfaces.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProjectFatec.WebApi.Models.Request;
 using ProjectFatec.WebApi.Models.Response.ViewModels;
@@ -9,9 +13,11 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
+using MSAuthorize = Microsoft.AspNetCore.Authorization;
 
 namespace ProjectFatec.WebApi.Controllers
 {
+    [MSAuthorize.Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : Controller
@@ -19,12 +25,14 @@ namespace ProjectFatec.WebApi.Controllers
         private readonly IUserService _userService;
         private readonly IAddressService _addressService;
         private readonly IMapper _mapper;
+        private IJwtUtils _jwtUtils;
 
-        public UserController(IUserService userService, IAddressService addressService, IMapper mapper) 
+        public UserController(IUserService userService, IAddressService addressService, IMapper mapper, IJwtUtils jwtUtils)
         {
             _userService = userService ?? throw new ArgumentNullException(nameof(userService));
             _addressService = addressService ?? throw new ArgumentNullException(nameof(addressService));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            _jwtUtils = jwtUtils;
         }
 
         [HttpGet]
@@ -57,6 +65,29 @@ namespace ProjectFatec.WebApi.Controllers
             return Ok(users);
         }
 
+        [AllowAnonymous]
+        [HttpPost("authenticate")]
+        [ProducesResponseType(typeof(AuthenticateResponse), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> Authenticate(AuthenticateRequestRequest model)
+        {
+            var response = await _userService.Authenticate(_mapper.Map<AuthenticateRequest>(model));
+
+            if(response == null)
+                return NotFound();
+
+            var responseToAuthenticateResponse = _mapper.Map<AuthenticateResponse>(response);
+
+            if (responseToAuthenticateResponse == null)
+                return BadRequest();
+
+            responseToAuthenticateResponse.Token = _jwtUtils.GenerateToken(response);
+
+            return Ok(responseToAuthenticateResponse);
+        }
+
+        [AllowAnonymous]
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
@@ -69,7 +100,7 @@ namespace ProjectFatec.WebApi.Controllers
             if (!response)
                 return BadRequest();
 
-            return Ok();
+            return Ok(new { message = "Registration successful" });
         }
 
         [HttpPut]
